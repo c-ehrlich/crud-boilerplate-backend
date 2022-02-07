@@ -1,0 +1,26 @@
+# custom stuff
+commands.txt
+
+# mac
+.DS_Store
+
+# etc
+build
+
+# npm
+node_modules
+package-lock.json
+*.log
+*.gz
+
+# yarn
+yarn.lock
+
+# Coveralls
+coverage
+
+# Benchmarking
+benchmarks/graphs
+
+# ignore additional files using core.excludesFile
+# https://git-scm.com/docs/gitignore

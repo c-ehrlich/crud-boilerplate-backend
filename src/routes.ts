@@ -1,5 +1,9 @@
 import { Express, Request, Response } from 'express';
-import { createUserSessionHandler, getUserSessionsHandler } from './contoller/session.controller';
+import {
+  createUserSessionHandler,
+  deleteSessionHandler,
+  getUserSessionsHandler,
+} from './contoller/session.controller';
 import { createUserHandler } from './contoller/user.controller';
 import requireUser from './middleware/requireUser';
 import validateResource from './middleware/validateResource';
@@ -20,7 +24,13 @@ function routes(app: Express) {
     createUserSessionHandler
   );
 
-  app.get("/api/sessions", requireUser, getUserSessionsHandler);
+  app.get('/api/sessions', requireUser, getUserSessionsHandler);
+
+  app.delete('/api/sessions', requireUser, deleteSessionHandler);
+
+  app.post('/api/testpost', (req, res) => {
+    return res.json({ status: 'can post' });
+  });
 }
 
 export default routes;

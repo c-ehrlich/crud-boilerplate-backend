@@ -5,11 +5,13 @@ const privateKey = config.get<string>('privateKey');
 const publicKey = config.get<string>('publicKey');
 
 // 'object' is the JWT payload
-export function signJwt(
-  object: Object,
-  options?: jwt.SignOptions | undefined
-) {
+export function signJwt(object: Object, options?: jwt.SignOptions | undefined) {
   // sign with private key
+  console.log('about to sign JWT');
+  console.log('object', JSON.stringify(object));
+  console.log('privateKey', privateKey);
+  console.log('options', options);
+
   return jwt.sign(object, privateKey, {
     ...(options && options),
     algorithm: 'RS256',

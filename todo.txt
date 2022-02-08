@@ -1,0 +1,4 @@
+it's currently possible to create multiple session objects for the same value that
+all have 'valid': true, but delete session only invalidates the most recent (?) one.
+
+add a route that deletes ALL session objects (for testing)

@@ -1,0 +1,1 @@
+* DO NOT use the public and private keys that are included with this project. They are only here so it's possible to quickly test a deployment, but if really deploying this you should generate your own and keep them secret using environment variables or some other technique.

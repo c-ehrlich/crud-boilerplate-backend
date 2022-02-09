@@ -8,6 +8,7 @@ import { signJwt } from '../utils/jwt.utils';
 /**
  * We are using an in memory server for the product tests
  * And mocking out the services for the user tests
+ * This is just to show how both work
  */
 
 const app = createServer();
@@ -18,7 +19,7 @@ const app = createServer();
  */
 const userId = new mongoose.Types.ObjectId().toString();
 
-export const productPayload = {
+const productPayload = {
   user: userId,
   title: 'Canon EOS 1500D DSLR Camera with 18-55mm Lens',
   description:
@@ -27,7 +28,7 @@ export const productPayload = {
   image: 'https://i.imgur.com/QlRphfQ.jpg',
 };
 
-export const userPayload = {
+const userPayload = {
   _id: userId,
   email: 'jane.doe@example.com',
   name: 'Jane Doe',

@@ -24,4 +24,15 @@ others disagree
 can do `describe.skip` or `describe.only` to decide which tests to run
 also works on `it` blocks
 
+good idea: plan out your tests, like...
+  describe('user', () => {
+    // user registration
+    //// the username and password get validated
+    //// verify that the passwords and confirmpassword must match
+    //// verify that the handler handles any errors
+    
+    // creating a user session
+    //// a user can login with a valid email and password
+  })
 
+DEBUGGING @ 53:30 https://www.youtube.com/watch?v=r5L1XRZaCR0&list=PL0iFifR5umclpRsRgWQtOtcgUffblcZgx&index=3

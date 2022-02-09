@@ -8,6 +8,7 @@ const nanoid = customAlphabet('abcdefghiklmnopqrstuvwxyz0123456789', 10);
 // another way to integrate mongoose with typescript is typegoose
 export interface ProductDocument extends mongoose.Document {
   user: UserDocument['_id']; // user who created the product
+  productId: string;
   title: string;
   description: string;
   price: number;
@@ -19,7 +20,6 @@ export interface ProductDocument extends mongoose.Document {
 const productSchema = new mongoose.Schema(
   {
     productId: {
-      // could also just use the regular Mongo IDs
       type: String,
       required: true,
       unique: true,
@@ -36,6 +36,6 @@ const productSchema = new mongoose.Schema(
   }
 );
 
-const ProductModel = mongoose.model<ProductDocument>('Produce', productSchema);
+const ProductModel = mongoose.model<ProductDocument>('Product', productSchema);
 
 export default ProductModel;

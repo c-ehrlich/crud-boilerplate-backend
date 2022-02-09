@@ -1,0 +1,27 @@
+Points
+* Testing a REST API end-to-end with Supertest & mongodb-memory-server
+* Mocking services
+* Testing from the controller to the service
+
+data-flow-testing.jpg
+* turquoise stuff: we didn't write that (express / mongodb), so we probably don't need to test it
+* magenta stuff: we wrote that, so we need to test it
+
+we're testing mostly end to end here. obviously testing individual components/units
+also has value
+
+we need a different config file for each environment!!!
+common cause of timeout errors: our tests are not connected to mongo, but if we follow the route then we can see that it tries to connect to mongo (and times out)
+two solutions:
+  1. create an in memory version of mongo (easier)
+    caveat: this is overkill, and it's testing a part of the application that you don't really need to test
+  2. mock out the service (harder)
+
+it's perfectly normal to get a bunch of type errors in your test files
+some people think it's ok to add ts-ignore all over the place
+others disagree
+
+can do `describe.skip` or `describe.only` to decide which tests to run
+also works on `it` blocks
+
+

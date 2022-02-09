@@ -1,5 +1,4 @@
 import { object, number, string, TypeOf } from 'zod';
-
 const payload = {
   body: object({
     title: string({
@@ -34,15 +33,15 @@ export const updateProductSchema = object({
   ...params,
 });
 
-export const getProductSchema = object({
+export const deleteProductSchema = object({
   ...params,
 });
 
-export const deleteProductSchema = object({
+export const getProductSchema = object({
   ...params,
 });
 
 export type CreateProductInput = TypeOf<typeof createProductSchema>;
 export type UpdateProductInput = TypeOf<typeof updateProductSchema>;
-export type GetProductInput = TypeOf<typeof getProductSchema>;
+export type ReadProductInput = TypeOf<typeof getProductSchema>;
 export type DeleteProductInput = TypeOf<typeof deleteProductSchema>;

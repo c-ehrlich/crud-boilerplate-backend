@@ -1,13 +1,13 @@
 import { Request, Response } from 'express';
-import { validatePassword } from '../service/user.service';
+import { validatePassword } from '../user/user.service';
 import {
   createSession,
   findSessions,
   updateSession,
-} from '../service/session.service';
-import { signJwt } from '../utils/jwt.utils';
+} from './session.service';
+import { signJwt } from '../_utils/jwt.utils';
 import config from 'config';
-import logger from '../utils/logger';
+import logger from '../_utils/logger';
 
 export async function createUserSessionHandler(req: Request, res: Response) {
   // Validate the user's password

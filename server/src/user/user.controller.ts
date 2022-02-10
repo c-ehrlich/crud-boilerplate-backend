@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import { omit } from 'lodash';
-import { CreateUserInput } from '../schema/user.schema';
-import { createUser } from '../service/user.service';
-import logger from '../utils/logger';
+import { CreateUserInput } from './user.schema';
+import { createUser } from './user.service';
+import logger from '../_utils/logger';
 
 // handler to create a user
 export async function createUserHandler(

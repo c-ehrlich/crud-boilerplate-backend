@@ -1,10 +1,10 @@
 import supertest from 'supertest';
 import '@types/jest';
-import createServer from '../utils/server';
+import createServer from '../_utils/server';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
-import { createProduct } from '../service/product.service';
-import { signJwt } from '../utils/jwt.utils';
+import { createProduct } from '../product/product.service';
+import { signJwt } from '../_utils/jwt.utils';
 
 /**
  * We are using an in memory server for the product tests

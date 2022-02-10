@@ -1,7 +1,7 @@
 import config from 'config';
-import connect from './utils/connect';
-import logger from './utils/logger';
-import createServer from './utils/server';
+import connect from './_utils/connect';
+import logger from './_utils/logger';
+import createServer from './_utils/server';
 
 const port = config.get<number>('port');
 

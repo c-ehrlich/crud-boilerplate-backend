@@ -1,5 +1,5 @@
 import express from 'express';
-import deserializeUser from '../middleware/deserializeUser';
+import deserializeUser from '../_middleware/deserializeUser';
 import routes from '../routes';
 import cors from 'cors';
 import config from 'config';

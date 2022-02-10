@@ -2,13 +2,13 @@ import { Request, Response } from 'express';
 import {
   CreateProductInput,
   UpdateProductInput,
-} from '../schema/product.schema';
+} from './product.schema';
 import {
   createProduct,
   deleteProduct,
   findAndUpdateProduct,
   findProduct,
-} from '../service/product.service';
+} from './product.service';
 
 export async function createProductHandler(
   req: Request<{}, {}, CreateProductInput['body']>,

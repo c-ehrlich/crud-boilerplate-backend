@@ -2,8 +2,8 @@
 
 import { get } from 'lodash'; // makes it a bit safer to access a property that we don't know for sure exists
 import { Request, Response, NextFunction } from 'express';
-import { verifyJwt } from '../utils/jwt.utils';
-import { reIssueAccessToken } from '../service/session.service';
+import { verifyJwt } from '../_utils/jwt.utils';
+import { reIssueAccessToken } from '../session/session.service';
 
 // we put the user in res.locals so we can use it in e.g. getUserSessionHandler
 const deserializeUser = async (

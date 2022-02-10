@@ -1,10 +1,10 @@
 import mongoose from 'mongoose';
 import '@types/jest';
 import supertest from 'supertest';
-import createServer from '../utils/server';
-import * as UserService from '../service/user.service';
-import * as SessionService from '../service/session.service';
-import { createUserSessionHandler } from '../contoller/session.controller';
+import createServer from '../_utils/server';
+import * as UserService from '../user/user.service';
+import * as SessionService from '../session/session.service';
+import { createUserSessionHandler } from '../session/session.controller';
 
 const app = createServer();
 

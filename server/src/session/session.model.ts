@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { UserDocument } from './user.model';
+import { UserDocument } from '../user/user.model';
 
 // mongoose docs recommend not doing this!
 // another way to integrate mongoose with typescript is typegoose

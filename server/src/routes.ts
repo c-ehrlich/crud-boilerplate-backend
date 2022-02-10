@@ -4,24 +4,24 @@ import {
   deleteProductHandler,
   getProductHandler,
   updateProductHandler,
-} from './contoller/product.controller';
+} from './product/product.controller';
 import {
   createUserSessionHandler,
   deleteSessionHandler,
   getUserSessionsHandler,
-} from './contoller/session.controller';
-import { createUserHandler, getCurrentUser } from './contoller/user.controller';
-import requireUser from './middleware/requireUser';
-import validateResource from './middleware/validateResource';
+} from './session/session.controller';
+import { createUserHandler, getCurrentUser } from './user/user.controller';
+import requireUser from './_middleware/requireUser';
+import validateResource from './_middleware/validateResource';
 import {
   createProductSchema,
   deleteProductSchema,
   getProductSchema,
   updateProductSchema,
-} from './schema/product.schema';
-import { createSessionSchema } from './schema/session.schema';
-import { createUserSchema } from './schema/user.schema';
-import logger from './utils/logger';
+} from './product/product.schema';
+import { createSessionSchema } from './session/session.schema';
+import { createUserSchema } from './user/user.schema';
+import logger from './_utils/logger';
 
 import { get } from 'lodash'; // makes it a bit safer to access a property that we don't know for sure exists
 

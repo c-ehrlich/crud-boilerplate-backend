@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import '@types/jest';
 import supertest from 'supertest';
 import createServer from '../utils/server';
 import * as UserService from '../service/user.service';

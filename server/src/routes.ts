@@ -10,7 +10,7 @@ import {
   deleteSessionHandler,
   getUserSessionsHandler,
 } from './contoller/session.controller';
-import { createUserHandler } from './contoller/user.controller';
+import { createUserHandler, getCurrentUser } from './contoller/user.controller';
 import requireUser from './middleware/requireUser';
 import validateResource from './middleware/validateResource';
 import {
@@ -29,10 +29,17 @@ function routes(app: Express) {
     logger.info('Running Health Check');
     res.sendStatus(200);
   });
+
   /**
    * Users
    */
-  app.post('/api/users', validateResource(createUserSchema), createUserHandler);
+  app
+    .route('/api/users')
+    .post(validateResource(createUserSchema), createUserHandler);
+
+  app
+    .route('/api/me')
+    .get(requireUser, getCurrentUser);
 
   /**
    * Sessions

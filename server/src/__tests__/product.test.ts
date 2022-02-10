@@ -1,4 +1,5 @@
 import supertest from 'supertest';
+import '@types/jest';
 import createServer from '../utils/server';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';

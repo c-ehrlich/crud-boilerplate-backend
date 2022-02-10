@@ -17,3 +17,9 @@ export async function createUserHandler(
     return res.status(409).send(e.message); // Confict
   }
 }
+
+export async function getCurrentUser(req: Request, res: Response) {
+  // if we put the requireUser middleware before this, we can assume the user
+  // is on the response object
+  return res.send(res.locals.user);
+}

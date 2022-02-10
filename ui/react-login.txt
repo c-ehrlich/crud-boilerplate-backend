@@ -1,0 +1,41 @@
+Topics
+* how cookies work
+* how to make network requests from a React application
+* basic Next.js routing
+* Form validation with Zod
+* Building forms with react-hook-form
+
+Minor server refactoring
+* Add tokens to cookies
+* Add get current user route
+
+Registration page
+* A form for registering a user
+* Network requests to register a user
+
+Login page
+* A form for logging a user in
+* Network requests to log the user in
+
+Get logged in user
+* Network request to get the current user
+
+Technologies used
+* Next.js
+* SWR
+* Axios
+* Zod
+* react-hook-form
+
+Commands
+yarn create next-app ui --typescript
+yarn add axios swr react-hook-form zod @hookform/resolvers
+
+
+# Next.JS has public and private environment variables
+# Public ones are visible to the browser, private ones are not
+# Public: NEXT_PUBLIC_ prefix
+# Private: no prefix required
+
+Access-Control-Allow-Origin header should be our browser's
+in server... yarn add cors, yarn add @types/cors -D

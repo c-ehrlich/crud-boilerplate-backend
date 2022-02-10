@@ -23,6 +23,8 @@ import { createSessionSchema } from './schema/session.schema';
 import { createUserSchema } from './schema/user.schema';
 import logger from './utils/logger';
 
+import { get } from 'lodash'; // makes it a bit safer to access a property that we don't know for sure exists
+
 function routes(app: Express) {
   // If this route returns 200, our app is running
   app.get('/healthcheck', (req: Request, res: Response) => {
@@ -37,9 +39,7 @@ function routes(app: Express) {
     .route('/api/users')
     .post(validateResource(createUserSchema), createUserHandler);
 
-  app
-    .route('/api/me')
-    .get(requireUser, getCurrentUser);
+  app.route('/api/me').get(requireUser, getCurrentUser);
 
   /**
    * Sessions

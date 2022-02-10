@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import config from 'config';
+import log from './logger';
 
 const privateKey = config.get<string>('privateKey');
 const publicKey = config.get<string>('publicKey');
@@ -23,9 +24,11 @@ export function verifyJwt(token: string) {
       decoded,
     };
   } catch (e: any) {
+    log.error(e.message);
     return {
       valid: false,
-      expired: e.message === 'jwt expired',
+      expired: true,
+      // expired: e.message === 'jwt expired', // this is how it was before, i believe the error messages of jwt.verify were different at the time
       decoded: null,
     };
   }

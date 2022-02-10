@@ -20,8 +20,6 @@ const deserializeUser = async (
   const refreshToken =
     get(req, 'cookies.refreshToken') || get(req, 'headers.x-refresh');
 
-  if (!accessToken) return next();
-
   const { expired, decoded } = verifyJwt(accessToken);
 
   if (decoded) {
@@ -40,8 +38,8 @@ const deserializeUser = async (
       // set a new cookie for access token
       // if the client wants to use localStorage then they can, because we set the header above
       // but we prefer to use a cookie because it's safer
-      res.cookie('accessToken', accessToken, {
-        maxAge: 900000, // 15 mins
+      res.cookie('accessToken', newAccessToken, {
+        maxAge: 3.154e10, // 1 year (expires sooner than that on the server)
         httpOnly: true, // can not access this cookie with JavaScript
         domain: 'localhost', // TODO set this in config instead!!!
         path: '/',
@@ -52,7 +50,7 @@ const deserializeUser = async (
 
     const result = verifyJwt(newAccessToken as string);
 
-    res.locals.use = result.decoded;
+    res.locals.user = result.decoded;
     return next();
   }
 

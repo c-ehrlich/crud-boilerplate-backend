@@ -32,7 +32,7 @@ export async function createUserSessionHandler(req: Request, res: Response) {
 
   // Return access and refresh tokens in cookies and send them
   res.cookie('accessToken', accessToken, {
-    maxAge: 900000, // 15 mins
+    maxAge: 3.154e10, // 1 year (expires sooner than that on the server)
     httpOnly: true, // can not access this cookie with JavaScript
     domain: 'localhost', // TODO set this in config instead!!!
     path: '/',
